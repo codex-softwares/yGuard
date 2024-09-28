@@ -140,7 +140,7 @@ public class Cl extends PkCl implements NameListUp, NameListDown
       TreeItem parent, boolean isInnerClass, String name, String superClass, String[] superInterfaces, int modifiers, ObfuscationConfig obfuscationConfig
     )
     {
-        super(parent, name);
+        super(parent, isInnerClass ? name.replaceAll("\\$", "") : name);
         this.superClass = superClass;
         this.superInterfaces = superInterfaces;
         this.isInnerClass = isInnerClass;
